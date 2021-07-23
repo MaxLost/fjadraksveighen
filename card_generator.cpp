@@ -40,15 +40,15 @@ private :
         for (int i = 0; i < n; i++) // Initializing types of cards;
             type[i] = i + 2;
         
-        suits[0] = "Spades"; // Initializing suits of cards. Needs refactoring when custom suits was added
+        suits[0] = "Spades"; // Initializing suits of cards. Refactor when custom suits will be added
         suits[1] = "Clubs";
         suits[2] = "Hearts";
         suits[3] = "Diamonds";
     }
     
-    static void ShowCard(Card &new_card, std::vector <std::string> &suits) {
+    static void ShowCard(Card & current_card, std::vector <std::string> &suits) {
         int card_type, card_suit;
-        new_card.GetProperties(card_type, card_suit); // Getting properties of current card
+        current_card.GetProperties(card_type, card_suit); // Getting properties of current card
         
         std::cout << suits[card_suit] << ' ';
 
@@ -88,10 +88,10 @@ public:
 
         int a = x % 4;
         int b = type[x % 13];
-        Card* new_card = new Card;
-        (*new_card).SetProperties(b, a);
+        Card* current_card = new Card;
+        (*current_card).SetProperties(b, a);
 
-        ShowCard(*new_card, suits);
+        ShowCard(*current_card, suits);
     }
 };
 
