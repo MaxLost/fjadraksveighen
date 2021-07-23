@@ -33,7 +33,7 @@ class Card {
 };
 
 class RandomCardGenerator {
-public :
+private :
     static void InitPropertiesSets(std::vector <int> &type, std::vector <std::string> &suits) {
         int n = type.size(); // "type" array size
         // Values in array: 2-10 — numbers; 11 — Jack; 12 — Queen; 13 — King; 14 — Ace
@@ -76,6 +76,7 @@ public :
         }
     }
 
+public:
     static void GenerateRandomCard() {
         std::vector <std::string> suits(4);
         std::vector <int> type(13); 
