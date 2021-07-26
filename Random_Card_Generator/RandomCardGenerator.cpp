@@ -14,10 +14,12 @@ RandomCardGenerator::RandomCardGenerator() {};
 void RandomCardGenerator::InitPropertiesSets(std::vector <int>& type, std::vector <std::string>& suits) {
     int n = type.size();
     // Values in array: 2-10 — numbers; 11 — Jack; 12 — Queen; 13 — King; 14 — Ace
-    for (int i = 0; i < n; i++) // Initializing types of cards;
+    // Initializing types of cards
+    for (int i = 0; i < n; i++) 
         type[i] = i + 2;
 
-    suits[0] = "Spades"; // Initializing suits of cards. Refactor when custom suits will be added
+    // Initializing suits of cards. Refactor when custom suits will be added
+    suits[0] = "Spades"; 
     suits[1] = "Clubs";
     suits[2] = "Hearts";
     suits[3] = "Diamonds";
@@ -25,15 +27,19 @@ void RandomCardGenerator::InitPropertiesSets(std::vector <int>& type, std::vecto
 
 void RandomCardGenerator::ShowCard(Card& current_card, std::vector <std::string>& suits) {
     int card_type, card_suit;
-    current_card.Card::GetProperties(card_type, card_suit); // Getting properties of current card
 
-    if (card_type == -1 || card_suit == -1) { // Checking correct initialization of current card
+    // Getting properties of current card
+    current_card.Card::GetProperties(card_type, card_suit); 
+
+    // Checking correct initialization of current card
+    if (card_type == -1 || card_suit == -1) { 
         std::cout << "Card initialization error" << std::endl;
         exit(EXIT_FAILURE);
     }
     std::cout << suits[card_suit] << ' ';
 
-    if (card_type <= 10) {  // Checking only upper border because "Card" object can't contain wrong values
+    // Checking only upper border because "Card" object can't contain wrong values
+    if (card_type <= 10) {  
         std::cout << card_type << std::endl;
     }
     else {
