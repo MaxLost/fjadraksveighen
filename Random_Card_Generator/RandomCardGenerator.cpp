@@ -66,10 +66,8 @@ void RandomCardGenerator::GenerateRandomCard() {
     std::uniform_int_distribution<int> n(1, 10000);
     int x = n(rng) + 20;
 
-    int a = x % 4;
-    int b = type[x % 13];
     Card* current_card = new Card;
-    (*current_card).Card::SetProperties(b, a);
+    (*current_card).Card::SetProperties(type[x % 13], x % 4);
 
     RandomCardGenerator::ShowCard(*current_card, suits);
     delete current_card;

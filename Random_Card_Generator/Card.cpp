@@ -7,7 +7,8 @@ Card::Card() {
 };
 
 void Card::SetProperties(int t, int s) {
-    if ((s < 0 || s > 3) || (t < 2 || t > 14)) { // Check on wrong values of card properties
+    // Check on wrong values of card properties
+    if ((s < 0 || s > 3) || (t < 2 || t > 14)) { 
         std::cout << "Wrong suit or card type" << std::endl;
         exit(EXIT_FAILURE);
     }
